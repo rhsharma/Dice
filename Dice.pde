@@ -1,13 +1,17 @@
 void setup()
 {
 	noLoop();
+	background(255);
 }
 void draw()
 {
+	die.show();
+	background(255);
 	//your code here
 }
 void mousePressed()
 {
+
 	redraw();
 }
 class Die //models one single dice cube

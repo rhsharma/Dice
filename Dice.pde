@@ -46,7 +46,7 @@ class Die //models one single dice cube
 
 	void show()
 	{
-		fill(0);
+		fill(0, 75, (int)(Math.random()*255));
 		rect(myX, myY, 50, 50, 7);
 		fill(255);
 		if (numDice == 1)
@@ -77,7 +77,7 @@ class Die //models one single dice cube
 			ellipse(myX+12, myY+38, 10, 10);
 			ellipse(myX+38, myY+38, 10, 10);
 			ellipse(myX+38, myY+12, 10, 10);
-			ellipse(myX+25, myY+25, 10, 10);         //Middle
+			ellipse(myX+25, myY+25, 10, 10);        //Middle
 		}
 		else
 		{

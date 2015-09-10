@@ -25,9 +25,15 @@ public void setup()
 public void draw()
 {
 	background(255);
-	one = new Die(25, 25);
-	one.roll();
-	one.show();
+	for (int j = 30; j <250; j+=60)
+	{
+		for (int i = 30; i <250; i+=60)
+		{
+		one = new Die(i, j);
+		one.roll();
+		one.show();
+		}
+	}
 }
 
 
@@ -40,11 +46,11 @@ public void mousePressed()
 class Die //models one single dice cube
 {
 	int myX, myY, numDice;
-	Die(int x, int y) //constructor
+	Die(int i, int j) //constructor
 	{
-		myX = x;
-		myY = y;
-		numDice = ((int)(Math.random()*6)+1);
+		myX = i;
+		myY = j;
+		//numDice = ((int)(Math.random()*6)+1);
 	}
 
 
@@ -100,6 +106,7 @@ class Die //models one single dice cube
 		}
 	}
 }
+//michaela rocks
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "Dice" };
     if (passedArgs != null) {

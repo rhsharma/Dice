@@ -15,6 +15,7 @@ import java.io.IOException;
 public class Dice extends PApplet {
 
 Die one;
+int numTotal;
 
 public void setup()
 {
@@ -25,6 +26,7 @@ public void setup()
 public void draw()
 {
 	background(255);
+	numTotal = 0;
 	for (int j = 30; j <250; j+=60)
 	{
 		for (int i = 30; i <250; i+=60)
@@ -34,6 +36,8 @@ public void draw()
 		one.show();
 		}
 	}
+	fill(0);
+	text(numTotal, 250, 270);
 }
 
 
@@ -68,17 +72,20 @@ class Die //models one single dice cube
 		if (numDice == 1)
 		{
 			ellipse(myX+25, myY+25, 10, 10);
+			numTotal += 1;
 		}
 		else if (numDice == 2)
 		{
 			ellipse(myX+12, myY+12, 10, 10);
 			ellipse(myX+38, myY+38, 10, 10);
+			numTotal += 2;
 		}
 		else if (numDice == 3)
 		{
 			ellipse(myX+12, myY+12, 10, 10);
 			ellipse(myX+38, myY+38, 10, 10);
 			ellipse(myX+25, myY+25, 10, 10);
+			numTotal += 3;
 		}
 		else if (numDice == 4)
 		{
@@ -86,6 +93,7 @@ class Die //models one single dice cube
 			ellipse(myX+12, myY+38, 10, 10);
 			ellipse(myX+38, myY+38, 10, 10);
 			ellipse(myX+38, myY+12, 10, 10);
+			numTotal += 4;
 		}
 		else if (numDice == 5)
 		{
@@ -94,6 +102,7 @@ class Die //models one single dice cube
 			ellipse(myX+38, myY+38, 10, 10);
 			ellipse(myX+38, myY+12, 10, 10);
 			ellipse(myX+25, myY+25, 10, 10);        //Middle
+			numTotal += 5;
 		}
 		else
 		{
@@ -102,7 +111,8 @@ class Die //models one single dice cube
 			ellipse(myX+38, myY+38, 10, 10);
 			ellipse(myX+38, myY+12, 10, 10);
 			ellipse(myX+25, myY+12, 10, 10); 
-			ellipse(myX+25, myY+38, 10, 10); 
+			ellipse(myX+25, myY+38, 10, 10);
+			numTotal += 6; 
 		}
 	}
 }
